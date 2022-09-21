@@ -1,3 +1,5 @@
+import ItemUnitys from "./ItemUnitys";
+
 const CartWidget = ({ children }) => {
     return (
         <>
@@ -13,6 +15,7 @@ const CartWidget = ({ children }) => {
                         {/* Sidebar content here  */}
                         <li><a>Sidebar Item 1</a></li>
                         <li><a>Sidebar Item 2</a></li>
+                        <ItemUnitys/>
 
                     </ul>
                 </div>
