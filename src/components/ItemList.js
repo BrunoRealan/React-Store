@@ -3,7 +3,7 @@ import { useEffect , useState } from "react";
 
 const ItemList = () => {
 
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState([]);
 
 
     useEffect(() => {
@@ -15,9 +15,9 @@ const ItemList = () => {
 
         fetch(URL)
             .then(response => response.json())
-            .then(data => setProduct(data));
+            .then(data => console.log(data))
     }
-
+    
     return (
         <>
             <div>
