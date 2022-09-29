@@ -1,16 +1,31 @@
-
-const products = [[]]
-
+import { useEffect , useState } from "react";
 
 
 const ItemList = () => {
+
+    const [product, setProduct] = useState({});
+
+
+    useEffect(() => {
+        getProducts()
+    }, [])
+
+    const getProducts = ()=> {
+        const URL = "https://raw.githubusercontent.com/BrunoRealan/React-Store/main/src/resources/Products.json"
+
+        fetch(URL)
+            .then(response => response.json())
+            .then(data => setProduct(data));
+    }
+
     return (
         <>
-            <div className="grid max-w-full grid-cols-1 gap-3 m-auto md:grid-cols-2 lg:grid-cols-4 lg:max-w-7xl">
-                <img></img>
+            <div>
+                {product.map (p => <img key={p.id}>{p.img}</img>)}
             </div>
         </>
     )
+
 }
 
 export default ItemList;
