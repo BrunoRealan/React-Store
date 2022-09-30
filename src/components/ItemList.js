@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const ItemList = () => {
@@ -20,31 +21,20 @@ const ItemList = () => {
 
     return (
         <>
-            {product.map(p =>
-                <div className="w-full carousel" key={p.id}>
-                    <div id="slide1" className="relative w-full carousel-item">
-                        <img src={p.img} className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide3" className="btn btn-circle">❮</a>
-                            <a href="#slide2" className="btn btn-circle">❯</a>
+            <div className="grid gap-5 p-24 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 justify-items-center ">
+                {product.map(p =>
+                    <div className="shadow-xl w-80 card card-compact bg-base-100" key={p.id}>
+                        <figure><img src={p.img} alt={p.name} /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title">{p.name}</h2>
+                            <p>USD ${p.price}</p>
+                            <div className="justify-end card-actions">
+                                <button className="text-base btn btn-primary font-bebas">Comprar</button>
+                            </div>
                         </div>
                     </div>
-                    <div id="slide2" className="relative w-full carousel-item">
-                        <img src={p.img2} className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide1" className="btn btn-circle">❮</a>
-                            <a href="#slide3" className="btn btn-circle">❯</a>
-                        </div>
-                    </div>
-                    <div id="slide3" className="relative w-full carousel-item">
-                        <img src={p.img3} className="w-full" />
-                        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                            <a href="#slide2" className="btn btn-circle">❮</a>
-                            <a href="#slide1" className="btn btn-circle">❯</a>
-                        </div>
-                    </div>
-                </div>
-            )}
+                )}
+            </div>
         </>
     )
 

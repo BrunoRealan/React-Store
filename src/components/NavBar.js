@@ -1,9 +1,9 @@
 const Navbar = () => {
     return (
         <>
-            <nav className="sticky top-0 p-4 border border-base-300 navbar bg-base-200 drop-shadow-lg">
+            <nav className="sticky top-0 z-50 p-4 border border-base-300 navbar bg-base-200 drop-shadow-lg">
                 <div className="justify-center flex-1">
-                    <a href="/resources/App.js"><img className="w-20 drop-shadow-lg" src={require("../resources/Ray-Ban_logo.jpg")}/></a> 
+                    <a href="/"><img className="w-20 drop-shadow-lg" src={require("../resources/Ray-Ban_logo.jpg")}/></a> 
                 </div>
                 <div className="justify-center flex-1">
                     <div className="dropdown dropdown-end">

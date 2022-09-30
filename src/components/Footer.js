@@ -3,7 +3,7 @@ const Footer = () => {
         <>
             <footer className="absolute inset-x-0 bottom-0 items-center h-32 p-4 footer bg-base-300 justify-evenly drop-shadow-md">
                 <div className="items-center grid-flow-col">
-                    <a href="/resources/App.js"><img className="w-32 drop-shadow-md" src={require("../resources/Ray-Ban_logo_footer.png")} /></a>
+                    <a href="/"><img className="w-32 drop-shadow-md" src={require("../resources/Ray-Ban_logo_footer.png")} /></a>
                 </div>
                 <div className="items-center grid-flow-col">
                     <p>Copyright © 2022 - Todos los derechos reservados</p>
