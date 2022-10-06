@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom"; 
+ 
 const Navbar = () => {
     return (
         <>
@@ -9,8 +11,8 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="text-lg btn btn-ghost rounded-btn font-bebas drop-shadow-sm">Tipos de Lentes</label>
                         <ul tabIndex={0} className="items-center p-2 mt-4 border drop-shadow-md border-base-300 menu dropdown-content bg-base-200 rounded-box w-52">
-                            <li className="text-lg font-bebas drop-shadow-sm"><a>Lentes de Sol</a></li>
-                            <li className="text-lg font-bebas drop-shadow-sm"><a>Lentes de vision</a></li>
+                            <NavLink to={`/category/sunGlasses`}> <li /* onClick={sun} */ className="m-2 text-lg font-bebas drop-shadow-sm">Lentes de Sol</li></NavLink>
+                            <NavLink to={`/category/eyeGlasses`}> <li /* onClick={eye} */ className="m-2 text-lg font-bebas drop-shadow-sm">Lentes de Vision</li></NavLink>
                         </ul>
                     </div>
                 </div>
