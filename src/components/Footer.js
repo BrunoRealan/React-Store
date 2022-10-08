@@ -1,9 +1,11 @@
 const Footer = () => {
+
+    //Función Render
     return (
         <>
             <footer className="absolute inset-x-0 bottom-0 items-center h-32 p-4 footer bg-base-300 justify-evenly drop-shadow-md">
                 <div className="items-center grid-flow-col">
-                    <a href="/"><img className="w-32 drop-shadow-md" src={require("../resources/Ray-Ban_logo_footer.png")} /></a>
+                    <a href="/"><img className="w-32 drop-shadow-md" src={require("../resources/Ray-Ban_logo_footer.png")} alt="Ray-Ban Logo" /></a>
                 </div>
                 <div className="items-center grid-flow-col">
                     <p>Copyright © 2022 - Todos los derechos reservados</p>
@@ -16,7 +18,7 @@ const Footer = () => {
                 </div>
             </footer>
         </>
-    )
+    );
 };
 
 export default Footer;

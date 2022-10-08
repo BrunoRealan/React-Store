@@ -1,18 +1,20 @@
-import { NavLink } from "react-router-dom"; 
- 
-const Navbar = () => {
+import { NavLink } from "react-router-dom";
+
+const Navbar = ({ type, name }) => {
+
+    //Función Render
     return (
         <>
             <nav className="sticky top-0 z-50 p-4 border border-base-300 navbar bg-base-200 drop-shadow-lg">
                 <div className="justify-center flex-1">
-                    <a href="/"><img className="w-20 drop-shadow-lg" src={require("../resources/Ray-Ban_logo.jpg")}/></a> 
+                    <a href="/"><img className="w-20 drop-shadow-lg" src={require("../resources/Ray-Ban_logo.jpg")} alt={name} /></a>
                 </div>
                 <div className="justify-center flex-1">
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="text-lg btn btn-ghost rounded-btn font-bebas drop-shadow-sm">Tipos de Lentes</label>
                         <ul tabIndex={0} className="items-center p-2 mt-4 border drop-shadow-md border-base-300 menu dropdown-content bg-base-200 rounded-box w-52">
-                            <NavLink to={`/category/sunGlasses`}> <li /* onClick={sun} */ className="m-2 text-lg font-bebas drop-shadow-sm">Lentes de Sol</li></NavLink>
-                            <NavLink to={`/category/eyeGlasses`}> <li /* onClick={eye} */ className="m-2 text-lg font-bebas drop-shadow-sm">Lentes de Vision</li></NavLink>
+                            <NavLink to={`/category/${type = "SUNGLASS"}`}> <li className="m-2 text-lg font-bebas drop-shadow-sm">Lentes de Sol</li></NavLink>
+                            <NavLink to={`/category/${type = "EYEGLASS"}`}> <li className="m-2 text-lg font-bebas drop-shadow-sm">Lentes de Vision</li></NavLink>
                         </ul>
                     </div>
                 </div>
@@ -37,7 +39,7 @@ const Navbar = () => {
                 </div>
             </nav>
         </>
-    )
+    );
 };
 
 export default Navbar;

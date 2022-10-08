@@ -1,6 +1,9 @@
 import ItemUnitys from "./ItemUnitys";
 
+//Carrito Drawer
 const CartDrawer = ({ children }) => {
+
+    //Función Render
     return (
         <>
             <div className="drawer drawer-end">
@@ -13,8 +16,9 @@ const CartDrawer = ({ children }) => {
                     <label htmlFor="my-drawer" className="drawer-overlay"></label>
                     <ul className="p-4 overflow-y-auto menu w-80 bg-base-100 text-base-content">
                         {/* Cart content here  */}
-                        <li><a>Cart Item 1</a></li>
-                        <li><a>Cart Item 2</a></li>
+                        <li>Cart Item 1</li>
+                        <ItemUnitys/>
+                        <li>Cart Item 2</li>
                         <ItemUnitys/>
                     </ul>
                 </div>
