@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useCart } from "../context/Context";
 import ItemUnitys from "./ItemUnitys";
 
 // Detalle del Item
 const ItemDetail = () => {
 
     // UseState & UseParams
+    const {addItem} = useCart();
     const { id: itemId } = useParams();
     const [item, setItem] = useState([]);
 
@@ -13,7 +15,7 @@ const ItemDetail = () => {
     useEffect(() => {
         getProducts();
         // eslint-disable-next-line
-    }, []);
+    }, [itemId]);
 
     //Función Fetch
     const getProducts = () => {
@@ -25,6 +27,11 @@ const ItemDetail = () => {
             .then(item => setItem(item))
     };
 
+    const addHandler = () => {
+        addItem( item.id )
+    }
+
+    //console.log(useCart);
     //Función Render
     return (
         <>
@@ -36,7 +43,7 @@ const ItemDetail = () => {
                         <p>{item.detail}</p>
                         <p className="mt-2 mb-2 text-xl font-medium text-success font-bebas">USD ${item.price}</p>
                         <ItemUnitys />
-                        <button className="text-lg font-bebas btn btn-sm">COMPRAR</button>
+                        <button onClick={addHandler} className="text-lg font-bebas btn btn-sm">AGREGAR AL CARRITO</button>
                     </div>
                 </div>
             </div>

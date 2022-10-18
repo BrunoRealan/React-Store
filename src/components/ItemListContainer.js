@@ -9,7 +9,7 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         getProducts()
-    }, []);
+    }, [products.id]);
 
     //Función Fetch
     const getProducts = () => {

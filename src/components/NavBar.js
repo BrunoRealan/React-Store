@@ -5,7 +5,7 @@ const Navbar = ({ type, name }) => {
     //Función Render
     return (
         <>
-            <nav className="sticky top-0 z-50 p-4 border border-base-300 navbar bg-base-200 drop-shadow-lg">
+            <nav className="sticky top-0 z-50 h-24 p-4 border border-base-300 navbar bg-base-200 drop-shadow-lg">
                 <div className="justify-center flex-1">
                     <a href="/"><img className="w-20 drop-shadow-lg" src={require("../resources/Ray-Ban_logo.jpg")} alt={name} /></a>
                 </div>
@@ -31,7 +31,7 @@ const Navbar = ({ type, name }) => {
                                 <span className="text-lg font-medium font-bebas drop-shadow-md">8 Items</span>
                                 <span className="text-base font-medium text-success font-bebas drop-shadow-sm">Subtotal: $999.99</span>
                                 <div className="card-actions">
-                                    <label htmlFor="my-drawer" className="text-base drawer-button btn-sm btn btn-wide btn-primary font-bebas drop-shadow">Ver Cart</label>
+                                    <NavLink to={`/cart/`}><label className="text-base btn-sm btn btn-wide btn-primary font-bebas drop-shadow">Ver Cart</label></NavLink>
                                 </div>
                             </div>
                         </div>
