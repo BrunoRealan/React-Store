@@ -1,24 +1,19 @@
 import { useState } from "react";
 
 //Contador (en prueba)
-const ItemUnitys = () => {
-    const product = {
-        Name: "Lentes X de sol",
-        Price: 300,
-        Stock: 5
-    };
+const ItemUnitys = ({ stock, addToCart }) => {
 
     //UseState
-    const [add, setAdd] = useState(1);
+    const [counter, setCounter] = useState(1);
 
-    //Funcion Sumar
+    //Funcion Restar
     const clickDecrease = () => {
-        add > 1 ? setAdd(add - 1) : setAdd(add)
+        counter > 1 ? setCounter(counter - 1) : setCounter(counter)
     };
 
-    //Función Restar
+    //Función Sumar
     const clickAdd = () => {
-        add < product.Stock ? setAdd(add + 1) : setAdd(add)
+        counter < Number(stock) ? setCounter(counter + 1) : setCounter(counter)
     };
 
     //Función Render
@@ -26,8 +21,11 @@ const ItemUnitys = () => {
         <>
             <div className="flex flex-row items-center justify-end m-3">
                 <button onClick={clickDecrease} className="pt-1 pb-1 btn btn-xs">-</button>
-                <div className="flex justify-center ml-3 mr-3 text-2xl font-medium font-bebas">{add}</div>
+                <div className="flex justify-center ml-3 mr-3 text-2xl font-medium font-bebas">{counter}</div>
                 <button onClick={clickAdd} className="pt-1 pb-1 btn btn-xs">+</button>
+            </div>
+            <div>
+                <button onClick={()=>addToCart(counter)} className="text-lg font-bebas btn btn-sm">AGREGAR AL CARRITO</button>
             </div>
         </>
     );

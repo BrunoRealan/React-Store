@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getFirestore, getDocs, collection } from "firebase/firestore"
 import ItemCard from "./ItemCard";
 
 //Catálogo de Productos
@@ -9,15 +10,18 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         getProducts()
-    }, [products.id]);
+    }, []);
 
-    //Función Fetch
+    //Función para traer los productos de Firebase
     const getProducts = () => {
-        const URL = "https://raw.githubusercontent.com/BrunoRealan/React-Store/main/src/resources/Products.json"
+        const db = getFirestore();
+        const myCollection = collection(db, "products");
 
-        fetch(URL)
-            .then(response => response.json())
-            .then(data => setProducts(data))
+        getDocs(myCollection)
+            .then(snapshot => {
+                const data = snapshot.docs.map(e => ({ id: e.id, ...e.data() }))
+                setProducts(data);
+            });
     };
 
     //Función Render

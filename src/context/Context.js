@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react'
 
 // Contexto del carrito
-const CartContext = createContext()
+const CartContext = createContext();
 const useCart = () => (useContext(CartContext));
 
 // Provider del carrito
@@ -11,15 +11,21 @@ const CartProvider = ({ children }) => {
 
     // Agregar un item al carrito
     const addItem = (item, quantity) => {
+
         if (isInCart(item.id)) {
             let index = cartItems.findIndex((index) => (index.id === item.id))
             let copyCart = [...cartItems]
             copyCart[index].quantity += quantity
             setCartItems(copyCart)
+            console.log("if");
+
         } else {
             const itemToAdd = { ...item, quantity }
             setCartItems([...cartItems, itemToAdd])
-        }
+            console.log("else");
+        };
+        
+        console.log(cartItems);
     }
 
     // Checkear si el item ya se encuentra en el carrito
@@ -49,7 +55,7 @@ const CartProvider = ({ children }) => {
     // Obtener el subtotal
     const getSubtotal = (price, quantity) => {
         let subtotal = 0
-        subtotal = subtotal + (price * quantity)
+        subtotal = subtotal + ( price * quantity)
         return Number(subtotal)
     }
 
@@ -63,6 +69,7 @@ const CartProvider = ({ children }) => {
     }
 
     const Context = {
+        cartItems,
         addItem,
         isInCart,
         removeItem,
@@ -73,7 +80,7 @@ const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{ Context }}>
+        <CartContext.Provider value={Context}>
             {children}
         </CartContext.Provider>
     )

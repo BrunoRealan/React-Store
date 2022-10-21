@@ -84,7 +84,7 @@
         "name": "RB4191",
         "type": "SUNGLASS",
         "detail": "Saca a la luz la diva que llevas dentro con las RB4191, la última novedad de la gama de sol Highstreet. El modelo presenta lentes redondas extragrandes y suaves colores femeninos que añaden un toque de glamur a cualquier look.\nLas RB4191 están pensadas para las mujeres que quieren llamar la atención y no tienen miedo de dejar huella.",
-        "stock": "5",
+        "stock": "7",
         "price": "151.00"
     },
     {
@@ -117,7 +117,7 @@
         "name": "NEW WAYFARER BICOLOR",
         "type": "SUNGLASS",
         "detail": "Colorea tu mundo y luce tu mejor cara con las nuevas Wayfarer Bicolor. Para lograr un atractivo cómodo y duradero, estos modelos combinan frontales de un solo tono oscuro con colores bicapa en las varillas. Las nuevas Wayfarer Bicolor vienen con cristal verde o lentes degradadas, lo que les confiere un aspecto contemporáneo. Sus característicos remaches en 3D, el etiquetado en el interior del molde y las varillas moldeadas de Ray-Ban aportan los toques finales a un modelo muy impactante que llenará el mundo de color y estilo.",
-        "stock": "5",
+        "stock": "8",
         "price": "166.00"
     },
     {
@@ -172,7 +172,7 @@
         "name": "RB4197",
         "type": "SUNGLASS",
         "detail": "Las Ray-Ban RB4197 son la combinación perfecta de funcionalidad y estilo de vida. El modelo se presenta con distintos tipos de lentes: desde las estándar de Ray-Ban hasta las modernísimas lentes flash, sin olvidar las sofisticadas lentes polarizadas, que garantizan la máxima claridad. Los detalles funcionales de las varillas, junto con la fantástica placa con el logotipo de Ray-Ban, hacen que estas sean las gafas perfectas para quienes viven la vida intensamente.",
-        "stock": "5",
+        "stock": "13",
         "price": "153.49"
     },
     {
@@ -195,7 +195,7 @@
         "type": "EYEGLASS",
         "detail": "El modelo RB5150 de Ray-Ban es un diseño simple y chic para mujeres. Este modelo de acetato con montura completa rectangular es flexible y antialérgico para el máximo confort. Las bisagras flexibles resisten a la torsión y son ajustables. Disponible en varios colores y diseños.",
         "stock": "9",
-        "price": "138.61"
+        "price": "138.65"
     },
     {
         "id": "18",
@@ -227,7 +227,7 @@
         "name": "RB7031",
         "type": "EYEGLASS",
         "detail": "",
-        "stock": "6",
+        "stock": "14",
         "price": "228.00"
     },
     {
@@ -271,7 +271,7 @@
         "name": "RB7164",
         "type": "EYEGLASS",
         "detail": "Con una mezcla de fibra de nailon, material metálico y audaces acentos de color transparentes, estas gafas son mucho más de lo que parecen. Los contornos de montura ligeros ofrecen una actualización subestimada de la forma cuadrada básica para un lucir un toque elegante sobre ideas antiguas.",
-        "stock": "5",
+        "stock": "11",
         "price": "188.60"
     },
     {
@@ -315,7 +315,7 @@
         "name": "RB3578V",
         "type": "EYEGLASS",
         "detail": "La revolución óptica redonda continúa con esta nueva forma metalizada semi al aire con combinaciones sobrias de metal/color y contrastes de texturas refinadas, para un look ligero, confortable e inteligente. Combinaciones fáciles de llevar de metal opaco y brillante y los tonos metalizados clásicos además de los modernos azul o tórtola, hacen que esta montura ligera y de ajuste pequeño sea única. Para individuos urbanos que siguen el ritmo de los tiempos.",
-        "stock": "5",
+        "stock": "9",
         "price": "190.49"
     },
     {
@@ -326,7 +326,7 @@
         "name": "RB5206",
         "type": "EYEGLASS",
         "detail": "",
-        "stock": "5",
+        "stock": "6",
         "price": "179.49"
     },
     {
@@ -337,7 +337,7 @@
         "name": "RB6375 OPTICS",
         "type": "EYEGLASS",
         "detail": "Elige las gafas de sol pantos que conoces y te encantan en los nuevos colores. La montura de metal contemporánea conserva el mismo estilo fino de la parte superior y ahora está disponible en negro, azul y burdeos con las puntas de las patillas en caucho para usarla cómodamente todo el día.",
-        "stock": "5",
+        "stock": "10",
         "price": "166.00"
     }
 ]
