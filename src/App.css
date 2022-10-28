@@ -1,15 +1,21 @@
+.divContainer {
+  padding-bottom: 122px;
+}
+
 .font-bebas {
   font-family: 'Bebas Neue', cursive;
 }
 
-.btn {
-  font-weight: 100;
-}
+;
 
 .btn-wide {
+  font-weight: 100;
   width: 10rem;
 }
 
-.btn-xs {
-  align-content: center;
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
