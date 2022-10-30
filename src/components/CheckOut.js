@@ -145,8 +145,7 @@ const Checkout = () => {
 
                             {/* Con todos los inputs completados correctamente, se habilita el botón para proceder con el pago */}
                             {buyer.name && buyer.surname && buyer.telephone && (buyer.email === buyer.emailConfirm) && telephoneRegex.test(buyer.telephone) && emailRegex.test(buyer.email, buyer.emailConfirm)
-                                ? (
-                                    <input
+                                ? ( <input
                                         onClick={() => { orderHandler(); setShowModal(true) }}
                                         className={(styles.button) + " bg-neutral-focus w-9/12 text-center py-3 mt-6"}
                                         type="submit"

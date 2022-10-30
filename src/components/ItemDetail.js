@@ -55,7 +55,9 @@ const ItemDetail = () => {
     //Render del Spinner mientras carga y luego del item detallado
     return (
         <>
-            {spinner ? <Spinner /> :
+            {spinner ?
+                <Spinner />
+                :
                 <div className={styles.itemContainer}>
                     <div className={styles.itemCard}>
                         <div className="carousel">
