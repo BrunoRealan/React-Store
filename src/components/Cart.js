@@ -7,9 +7,9 @@ const Cart = () => {
     // Estilos del carrito
     const styles = {
         title: "font-medium font-bebas text-xl tracking-wider leading-normal uppercase mb-10",
-        text: "font-light text-sm tracking-wide leading-normal lowercase",
+        text: "font-thin text-sm tracking-wide leading-normal lowercase",
         accentuate: "font-medium font-bebas text-md tracking-wider leading-loose uppercase",
-        button: "font-medium tracking-wider uppercase text-white bg-neutral-focus text-center py-3 mt-4 btn",
+        button: "font-medium text-lg tracking-wider uppercase bg-neutral-focus font-bebas text-center py-3 mt-4 btn",
         symbol: "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer text-gray-400 border border-gray-400 w-7 h-7 flex items-center justify-center p-0.5",
         counter: "border border-x-1 border-x-white h-full text-center w-5 p-0.5"
     };
@@ -88,15 +88,15 @@ const Cart = () => {
 
                             {/* Resúmen de compra */}
                             <div className="flex flex-col self-start w-full lg:mt-10 md:w-2/5">
-                                <div className={(styles.text) + " flex flex-row justify-between"}>
-                                    <p>Cantidad de items:</p>
-                                    <p className="font-semibold">{cartLenght()}</p>
+                                <div className="flex flex-row justify-between">
+                                    <p className={styles.text}>Cantidad de items:</p>
+                                    <p className={styles.text}>{cartLenght()}</p>
                                 </div>
-                                <div className={(styles.text) + " flex flex-row justify-between"}>
-                                    <p>Gastos de envío:</p>
-                                    <p>¡Envío gratis!</p>
+                                <div className="flex flex-row justify-between">
+                                    <p className={styles.text}>Gastos de envío:</p>
+                                    <p className={styles.text}>¡Envío gratis!</p>
                                 </div>
-                                <div className={(styles.accentuate) + " flex flex-row justify-between font-semibold"}>
+                                <div className="flex flex-row justify-between font-semibold">
                                     <p>Total:</p>
                                     <p>USD ${getTotal()}</p>
                                 </div>

@@ -32,7 +32,7 @@ const ItemListContainer = () => {
     return (
         <>
             {spinner ? <Spinner /> :
-                <div className="grid gap-10 p-24 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 justify-items-center ">
+                <div className="grid gap-10 p-24 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 justify-items-center ">
                     {products.map(p => <ItemCard key={p.id} {...p} />)}
                 </div>}
         </>

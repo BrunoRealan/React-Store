@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useCart } from "../context/Context";
 import { getDoc, getFirestore, doc } from "firebase/firestore";
 import ItemCounter from "./ItemCounter";
@@ -13,6 +13,7 @@ const ItemDetail = () => {
         itemContainer: "flex flex-col items-center max-w-full mx-auto my-5 lg:my-16 lg:max-w-7xl",
         itemCard: "shadow-xl card lg:card-side bg-base-100",
         divButton: "absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2",
+        finalButton: "text-lg font-thin uppercase font-bebas btn btn-sm",
         slide: "relative w-full carousel-item",
         slideButton: "btn btn-circle",
         text: "font-light text-md tracking-wide leading-normal",
@@ -22,6 +23,7 @@ const ItemDetail = () => {
     // UseStates, UseParams y UseContext del Carrito (useCart)
     const [item, setItem] = useState([]);
     const [spinner, setSpinner] = useState(false);
+    const [isInCart, setIsInCart] = useState(false);
     const { id: itemId } = useParams();
     const { addItem } = useCart();
 
@@ -46,7 +48,8 @@ const ItemDetail = () => {
 
     //Handler para addItem
     const addToCart = (quantity) => {
-        addItem(item, quantity)
+        addItem(item, quantity);
+        setIsInCart(true)
     };
 
     //Render del Spinner mientras carga y luego del item detallado
@@ -83,7 +86,13 @@ const ItemDetail = () => {
                             <p className={styles.text}>{item.detail}</p>
                             <p className={styles.text}>Quedan: {item.stock} en stock!</p>
                             <p className={styles.price}>USD ${item.price}</p>
-                            <ItemCounter stock={item.stock} addToCart={addToCart} />
+                            {isInCart ?
+                                (<div className="flex flex-col mt-6 space-y-8">
+                                    <Link to='/cart' className={styles.finalButton}>Finalizar compra</Link>
+                                </div>
+                                ) : (
+                                    <ItemCounter stock={item.stock} addToCart={addToCart} />)
+                            }
                         </div>
                     </div>
                 </div>}

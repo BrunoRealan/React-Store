@@ -8,13 +8,12 @@ const Checkout = () => {
 
     // Estilos del checkout
     const styles = {
-        title: "font-medium text-lg text-base-content tracking-wider leading-tight uppercase",
-        text: "font-normal text-sm text-base-content tracking-wide leading-normal",
-        accentuate: "font-medium text-xs text-gray-700 tracking-wider leading-loose uppercase",
-        input : "px-2 border-b border-base-300 placeholder-base-content py-4 w-full ",
-        button: "font-medium tracking-wider uppercase text-white bg-neutral-focus text-center py-3 mt-4 btn",
-        symbol: "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer text-gray-400 border border-gray-400 w-7 h-7 flex items-center justify-center p-0.5",
-        counter: "border border-x-1 border-x-white border-y-gray-400 text-gray-600 h-full text-center w-5 p-0.5"
+        title: "font-medium font-bebas text-xl text-base-content tracking-wider leading-tight uppercase",
+        text: "font-normal text-sm text-base-content tracking-wide leading-normal font-bebas",
+        accentuate: "font-medium text-gray-700 tracking-wider font-bebas leading-loose uppercase",
+        input: "px-2 border-b border-base-300 placeholder-base-content py-4 w-full ",
+        p: "mt-6 text-center md:w-9/12 lg:w-7/12 ",
+        button: "font-medium tracking-wider uppercase font-bebas bg-neutral-focus text-lg text-center py-3 mt-4 btn"
     };
 
     // Contexto del carrito
@@ -55,7 +54,7 @@ const Checkout = () => {
         const db = getFirestore();
         const ordersCollection = collection(db, "orders");
 
-        addDoc(ordersCollection, order).then(({id}) => {
+        addDoc(ordersCollection, order).then(({ id }) => {
             setIdCompra(id);
         });
     };
@@ -64,13 +63,13 @@ const Checkout = () => {
     return (
         <>
             {/* Contenedor checkout */}
-            <div className="flex items-center justify-center mx-6 mx-auto my-5 xl:max-w-7xl xl:mx-auto lg:my-10">
+            <div className="flex items-center justify-center mx-6 my-5 xl:max-w-7xl xl:mx-auto lg:my-10">
                 <div className="flex flex-col items-center justify-center w-full">
                     <h1 className={(styles.title) + " self-start mb-6"}>Checkout</h1>
                     <div className="flex flex-col items-start justify-start w-full lg:flex-row">
 
                         {/* Resúmen */}
-                        <div className="flex flex-col self-start w-full mr-6 md:w-1/2">
+                        <div className="flex flex-col self-start w-full my-6 mr-6 md:w-1/2">
                             <h2 className={styles.accentuate}>Resúmen</h2>
                             <div className="flex flex-col p-4 mt-6 border border-gray-200">
                                 <div className={"flex flex-row justify-between " + (styles.text)}>
@@ -149,7 +148,7 @@ const Checkout = () => {
                                 ? (
                                     <input
                                         onClick={() => { orderHandler(); setShowModal(true) }}
-                                        className={(styles.button) + " bg-neutral-focus w-9/12 text-center py-3 cursor-pointer mt-6"}
+                                        className={(styles.button) + " bg-neutral-focus w-9/12 text-center py-3 mt-6"}
                                         type="submit"
                                         value="Proceder al pago"
                                     />
@@ -172,7 +171,9 @@ const Checkout = () => {
                 <div className="container items-center justify-center px-4 py-20 mx-auto md:px-10 place-self-center">
                     <div className="flex flex-col items-center justify-center px-3 py-12 bg-white md:px-4">
                         <h2 className={"text-center md:w-9/12 lg:w-7/12" + (styles.title)}>¡Muchas gracias por tu compra {(buyer.name).toUpperCase()}!</h2>
-                        <p className={"mt-6 text-center md:w-9/12 lg:w-7/12 " + (styles.text)}>Te enviamos un mail a {(buyer.email).toLowerCase()} con tu orden de compra ID: {idCompra}. ¡Hasta la próxima!</p>
+                        <p className={(styles.p) + (styles.text)}>Te enviamos un mail a {(buyer.email).toLowerCase()} con tu orden de compra:</p>
+                        <p className={(styles.p) + (styles.text)}>ID: {idCompra}.</p>
+                        <p className={(styles.p) + (styles.text)}>¡Hasta la próxima!</p>
                         <Link to="/" className="flex justify-center mt-6">
                             <button onClick={clearCart} className={(styles.button)}>
                                 Seguir comprando
